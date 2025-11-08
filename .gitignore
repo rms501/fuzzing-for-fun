@@ -1,0 +1,8 @@
+__pycache__/
+
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+env

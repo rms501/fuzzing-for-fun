@@ -1,0 +1,2 @@
+class ModelProviderNotFound(Exception):
+    pass
