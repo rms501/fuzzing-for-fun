@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 
+from models.enums import OutputFormat
 
-class FuzzRequest(BaseModel):
-    rules: list[str]
-    output_format: str
+
+class CustomerRequest(BaseModel):
+    output_format: OutputFormat

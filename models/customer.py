@@ -5,12 +5,6 @@ from uuid import UUID
 from pydantic import BaseModel, constr, EmailStr
 
 
-class Address(BaseModel):
-    street: str
-    city: str
-    state: Optional[str]
-    postal_code: Annotated[str, constr(pattern=r'^\d{5}(-\d{4})?$')]
-
 class Customer(BaseModel):
     id: UUID
     first_name: str
@@ -18,6 +12,5 @@ class Customer(BaseModel):
     email: EmailStr
     phone: Optional[Annotated[str, constr(pattern=r'^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$')]]
     dob: Optional[date]
-    address: Address
     is_active: bool = True
     signup_date: datetime

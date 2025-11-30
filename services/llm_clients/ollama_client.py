@@ -15,4 +15,4 @@ class OllamaClient(BaseClient):
         if not system_prompt or user_prompt:
             raise PromptNotFound()
 
-        self.client.generate(self.model, system_prompt + user_prompt)
+        return self.client.generate(self.model, system_prompt + user_prompt)
