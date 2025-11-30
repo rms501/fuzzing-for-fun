@@ -10,13 +10,14 @@ from services.llm_clients.base_client import BaseClient
 class CustomerGenerator(BaseGenerator):
 
     def __init__(self, llm_client: BaseClient):
+        self.llm_client = llm_client
         self.fake = Faker()
 
     def generate(self) -> Customer:
-        return self.generate_fallback()
+        return self.generate_llm()
 
     def generate_llm(self) -> Customer:
-        pass
+        self.llm_client.generate("", "")
 
     def generate_fallback(self) -> Customer:
         return Customer(
